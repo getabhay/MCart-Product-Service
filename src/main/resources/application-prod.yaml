@@ -8,6 +8,11 @@ spring:
     show-sql: false
     open-in-view: false
 
+management:
+  health:
+    elasticsearch:
+      enabled: false
+
 mcart:
   services:
     product-search:
