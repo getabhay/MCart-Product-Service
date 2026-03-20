@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://mcart-db.cfaqum0egx32.ap-south-1.rds.amazonaws.com:5432/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    show-sql: false
+    open-in-view: false
+
+mcart:
+  services:
+    product-search:
+      base-url: ${MCART_PRODUCT_SEARCH_BASE_URL}

@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mcart-product-service-ingress
+  namespace: mcart
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: product.<replace-with-your-domain>
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mcart-product-service
+                port:
+                  number: 8080

@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  main:
+    keep-alive: true
+    lazy-initialization: true
+
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+
+  devtools:
+    restart:
+      enabled: true
+      log-condition-evaluation-delta: false # Reduces logging overhead
+
+mcart:
+  services:
+    product-search:
+      base-url: ${MCART_PRODUCT_SEARCH_BASE_URL}
