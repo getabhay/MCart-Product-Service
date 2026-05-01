@@ -6,9 +6,22 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: product.<replace-with-your-domain>
-      http:
+    - http:
         paths:
+          - path: /api/search/products
+            pathType: Prefix
+            backend:
+              service:
+                name: mcart-product-search-service
+                port:
+                  number: 8081
+          - path: /api/search
+            pathType: Prefix
+            backend:
+              service:
+                name: mcart-product-search-service
+                port:
+                  number: 8081
           - path: /
             pathType: Prefix
             backend:

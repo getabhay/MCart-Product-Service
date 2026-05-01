@@ -68,6 +68,6 @@ jobs:
               --dry-run=client -o yaml | retry k apply --validate=false -f -
             retry k apply --validate=false -f /opt/mcart-product-service/k8s/base/deployment.yaml
             retry k apply --validate=false -f /opt/mcart-product-service/k8s/base/service.yaml
-            retry k apply --validate=false -f /opt/mcart-product-service/k8s/base/ingress.yaml
+#            retry k apply --validate=false -f /opt/mcart-product-service/k8s/base/ingress.yaml
             retry k set image deployment/mcart-product-service mcart-product-service="$IMAGE" -n mcart
             retry k rollout status deployment/mcart-product-service -n mcart --timeout=240s
